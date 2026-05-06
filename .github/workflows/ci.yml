@@ -2,9 +2,9 @@ name: CI - Python Quality Checks
 
 on:
   push:
-    branches: [main]
+    branches: [master, main]
   pull_request:
-    branches: [main]
+    branches: [master, main]
 
 jobs:
   quality:
