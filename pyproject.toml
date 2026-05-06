@@ -1,5 +1,34 @@
-[tool.black]
-line-length = 88
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ml_housing"
+version = "0.1.0"
+description = "Pipeline de prédiction de prix immobiliers"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas",
+    "scikit-learn",
+    "joblib",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "ruff",
+    "ipykernel",
+    "httpx",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "."]
 
 [tool.ruff]
 line-length = 88
@@ -8,5 +37,9 @@ exclude = ["notebooks/"]
 [tool.ruff.lint]
 ignore = ["E402"]
 
-[tool.pytest.ini_options]
-testpaths = ["tests"]
+[tool.black]
+line-length = 88
+
+[tool.bandit]
+targets = ["src"]
+exclude_dirs = ["tests", ".venv", "venv"]
