@@ -2,7 +2,7 @@ name: CI - Python Quality Checks
 
 on:
   push:
-    branches: [master, main]
+    branches: [master, main, dev]
   pull_request:
     branches: [master, main]
 
@@ -27,6 +27,9 @@ jobs:
 
       - name: Run unit tests
         run: pytest
+
+      - name: Check project structure
+        run: pytest scripts/check_project_structure.py
 
       - name: Run Ruff lint
         run: ruff check .

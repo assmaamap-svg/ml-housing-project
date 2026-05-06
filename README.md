@@ -1,0 +1,1 @@
+[![CI - Python Quality Checks](https://github.com/assmaamap-svg/ml-housing-project/actions/workflows/ci.yml/badge.svg)](https://github.com/assmaamap-svg/ml-housing-project/actions/workflows/ci.yml)
