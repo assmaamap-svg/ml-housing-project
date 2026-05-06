@@ -5,7 +5,6 @@ from pathlib import Path
 
 app = FastAPI()
 
-
 def get_latest_model():
     """Trouve et charge le modèle avec le numéro de version le plus élevé."""
     artifacts_path = Path("artifacts")
@@ -18,14 +17,11 @@ def get_latest_model():
     latest_model_path = sorted(models, key=lambda x: int(x.stem.split("_v")[-1]))[-1]
     return joblib.load(latest_model_path)
 
-
 model = get_latest_model()
-
 
 @app.get("/health")
 def health():
     return {"status": "ok"}
-
 
 @app.post("/predict")
 def predict(data: dict):
