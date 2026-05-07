@@ -35,9 +35,7 @@ if st.button("Calculer l'estimation", type="primary"):
     }
 
     try:
-        response = requests.post(
-            f"{BACKEND_URL}/predict", json=payload, timeout=5
-        )
+        response = requests.post(f"{BACKEND_URL}/predict", json=payload, timeout=5)
         response.raise_for_status()
         prediction = response.json()["prediction"]
 

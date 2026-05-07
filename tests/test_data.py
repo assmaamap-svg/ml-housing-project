@@ -1,4 +1,3 @@
-import pytest
 from src.training.data import load_housing_data
 
 
