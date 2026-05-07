@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbbs.db
+
+# Data / notebooks / training artifacts
+notebooks/
+*.ipynb
+models/
+data/
+*.csv
+*.parquet
+*.pkl
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# Logs
+*.log
+logs/

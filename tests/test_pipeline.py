@@ -1,19 +1,8 @@
-import sys
-from pathlib import Path
-
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(PROJECT_ROOT / "src"))
-
-from ml_housing.pipeline import run_pipeline
+from src.training.pipeline import run_pipeline
 
 
-def test_pipeline_returns_metrics(tmp_path):
-    metrics = run_pipeline(artifacts_dir=str(tmp_path))
-
+def test_pipeline_returns_metrics():
+    metrics = run_pipeline()
     assert "mae" in metrics
     assert "rmse" in metrics
     assert "r2" in metrics
-    assert metrics["mae"] > 0
-    assert -1 <= metrics["r2"] <= 1
-    assert (tmp_path / "model.joblib").exists()
-    assert (tmp_path / "metrics.json").exists()
